@@ -1002,6 +1002,7 @@ header {
     @media (max-width: 800px) {
       .plans .plans-item {
         width: 80%;
+        height: auto;
         margin-bottom: 30px; } }
     @media (max-width: 450px) {
       .plans .plans-item {
