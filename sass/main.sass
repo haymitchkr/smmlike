@@ -24,6 +24,8 @@ h2//titles
 	font-size: 50px
 	word-spacing: 2px
 	line-height: 1
+	@media (max-width: 500px)
+		font-size: 40px
 a
 	text-decoration: none
 	color: inherit
@@ -35,10 +37,27 @@ a
 		width: 100%
 		height: auto
 header
+	position: relative
+	&:before
+		content: ""
+		position: absolute
+		width: 100%
+		height: 200%
+		z-index: -1
+		background-image: url(../img/bg1.jpg)
+		background-repeat: no-repeat
+		background-size: 100% 150%
+		background-position: center bottom
+		pointer-events: none
+		@media (max-width: 500px)
+			height: 250%
+	.container
+		z-index: 20
 	.header-wrapper
 		background-image: url(../img/bg1-blue.png)
 		background-repeat: no-repeat
 		background-size: 65% 100%
+		z-index: 25
 		background-position: right top
 		@media (max-width: 800px)
 			background-size: 65% 50%
@@ -56,7 +75,7 @@ header
 			padding-top: 30px
 		.header__nav
 			position: relative
-			z-index: 8
+			z-index: 80
 			@media (max-width: 900px)
 				display: flex
 				justify-content: center
@@ -133,7 +152,7 @@ header
 			height: 30px
 			margin-right: 20px
 			transition: transform 0.3s ease
-			z-index: 10
+			z-index: 100
 			top: 5%
 			@media(max-width: 900px)
 				display: block
@@ -305,10 +324,24 @@ header
 //main begin
 	//sociacl-networks begin
 .social-networks
-	background-repeat: no-repeat
+	position: relative
+	&:before
+		content: ""
+		position: absolute
+		width: 100%
+		height: 100%
+		pointer-events: none
+		background-image: url(../img/bg1-opacity.png)
+		background-size: 100% 100%
+		top: 0
+		left: 0
+		z-index: -1
+		@media (max-width: 900px)
+			background-size: cover
+.social-networks
 	margin-top: 50px
 	padding-top: 80px
-	padding-bottom: 100px
+	padding-bottom: 120px
 	text-align: center
 	&__title
 		color: $darkblue
@@ -352,8 +385,27 @@ header
 	//social-networsk end
 	//slider begin
 .slider
-	background-color: $blue
-	padding: 100px 0
+	position: relative
+	&:before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 125%
+		left: 0
+		top: -12%
+		bottom: -12%
+		z-index: -1
+		background-image: url(../img/bg2.png)
+		background-size: 100% 100%
+		@media (max-width: 900px)
+			background-size: cover
+		@media (max-width: 500px)
+			height: 115%
+			top: -7%
+.slider
+	padding: 50px 0
+	@media (max-width: 700px)
+		padding: 0
 	&__arrow-prev
 		background-image: url(../img/arrow-left.png)
 		background-repeat: no-repeat
@@ -386,6 +438,8 @@ header
 			display: none !important
 	.slick-dots
 		margin-bottom: -40px
+		@media (max-width: 500px)
+			margin-bottom: -10px
 		li
 			width: 19px
 			height: 19px
@@ -405,7 +459,7 @@ header
 	.slider-item
 		margin-top: 50px
 		background-repeat: no-repeat
-		background-size: 115% 115%
+		background-size: cover
 		background-position: 10% 10%
 		background-image: url(../img/slider-bg.png)
 		padding: 50px 50px 30px 90px
@@ -416,6 +470,8 @@ header
 			padding: 30px
 		@media (max-width: 700px)
 			flex-direction: column
+		@media (max-width: 500px)
+			padding-bottom: 50px
 		&__img
 			display: flex
 			align-items: center
@@ -495,6 +551,26 @@ header
 	//slidere begin
 	//advantages begin
 .advantages
+	position: relative
+	&:before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 100%
+		pointer-events: none
+		top: 0
+		left: 0
+		z-index: -2
+		background-image: url(../img/bg-3.jpg)
+		background-size: 100% 100%
+		@media (max-width: 700px)
+			height: 105%
+			top: -2.5%
+.advantages
+	padding: 80px 0
+	padding-bottom: 120px
+	@media (max-width: 700px)
+		padding: 100px 0
 	&__title
 		text-align: center
 		color: $blue
@@ -519,7 +595,7 @@ header
 			position: absolute
 			height: 100%
 			width: 192px
-			z-index: 3
+			z-index: 30
 			@media(max-width: 460px)
 				width: 150px
 			@media (max-width: 400px)
@@ -580,12 +656,33 @@ header
 //advantages end
 //plans begin
 .plans
-	padding-top: 100px
+	position: relative
+	&:before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 110%
+		left: 0
+		top: -10%
+		background-image: url(../img/bg-plans.png)
+		background-size: 100% 100%
+		z-index: -1
+		@media (max-width: 900px)
+			background-size: cover
+		@media (max-width: 800px)
+			height: 105%
+			top: -5%
+.plans
+	padding-top: 30px
 	text-align: center
+	@media (max-width: 800px)
+		padding-top: 0
 	&__title
 		color: $blue
 		@media (min-width: 800px)
 			margin-bottom: 100px
+		@media (max-width: 800px)
+			margin-bottom: 50px
 	&__items
 		display: flex
 		justify-content: space-between
@@ -775,8 +872,20 @@ header
 //plans end
 //errors begin
 .errors
-	background-color: $blue
-	padding: 40px 0
+	position: relative
+	&:before
+		position: absolute
+		content: ''
+		width: 100%
+		height: 100%
+		pointer-events: none
+		top: 0
+		left: 0
+		background-image: url(../img/bg4.jpg)
+		z-index: -2
+		background-size: cover
+.errors
+	padding: 70px 0 110px 0
 	&__wrapper
 		display: flex
 		justify-content: space-between
@@ -807,6 +916,9 @@ header
 			font-weight: 700
 			word-spacing: 2px
 			margin-bottom: 25px
+			@media (max-width: 500px)
+				font-size: 40px
+				line-height: 1.2
 	.errors-form
 		box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.2)
 		background-color: #ffffff
@@ -854,6 +966,20 @@ header
 //errors end
 //stage begin
 .stage
+	position: relative
+	&:before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 30%
+		background-image: url(../img/bg4-white.png)
+		top: -6%
+		left: 0
+		background-size: cover
+		z-index: -1
+		@media (max-width: 800px)
+			top: -3%
+.stage
 	&__title
 		text-align: center
 		color: $blue
@@ -867,10 +993,16 @@ header
 			@media (max-width: 768px)
 				flex-direction: column
 				align-items: center
+			@media (max-width: 500px)
+				margin-bottom: 25px
 		&__img
 			width: 55%
 			text-align: center
 			@media (max-width: 768px)
+				width: 75%
+			@media (max-width: 600px)
+				width: 85%
+			@media (max-width: 500px)
 				width: 100%
 		&__img-wrapper
 			background-image: url(../img/stage-bg.png)
@@ -879,6 +1011,10 @@ header
 			background-size: 100% 100%
 			background-position: center center
 			padding: 90px 0 110px 40px
+			@media (max-width: 500px)
+				padding: 70px 0 90px 20px
+			@media (max-width: 400px)
+				padding: 60px 0 70px 20px
 			p
 				color: $darkgrey
 				font-family: UnisansBook
@@ -890,6 +1026,11 @@ header
 				margin: 0 auto
 				margin-top: 40px
 				position: relative
+				@media (max-width: 550px)
+					font-size: 16px
+					line-height: 20px
+				@media (max-width: 400px)
+					margin-top: 20px
 				&:before
 					content: ""
 					position: absolute
@@ -899,6 +1040,8 @@ header
 					width: 90px
 					height: 2px
 					background-color: #4061b5
+					@media (max-width: 400px)
+						top: -20px
 	.stage-content
 		width: 40%
 		@media (max-width: 768px)
@@ -1047,8 +1190,27 @@ header
 //stages end
 //contacts begin
 .contacts
-	background-color: $blue
-	padding: 30px 0
+	position: relative
+	&:before
+		position: absolute
+		width: 100%
+		height: 110%
+		content: ""
+		top: -5%
+		pointer-events: none
+		left: 0
+		background-image: url(../img/bg5.png)
+		background-size: 100% 100%
+		z-index: -1
+		@media (max-width: 900px)
+			background-size: cover
+			top: 0
+			height: 112%
+
+.contacts
+	padding: 80px 0
+	@media (max-width:700px)
+		padding-bottom: 0
 	&__title
 		text-align: center
 		color: #fff
@@ -1201,8 +1363,22 @@ header
 //contacts end
 //footer begin
 .footer
-	background-color: $blue
-	padding: 40px 0
+	position: relative
+	&:before
+		content: ""
+		position: absolute
+		width: 100%
+		height: 115%
+		background-image: url(../img/footer-bg.png)
+		background-size: cover
+		top: -15%
+		z-index: -1
+		pointer-events: none
+		@media (max-width: 900px)
+			top: -20%
+			height: 120%
+			background-position: right center
+	padding: 70px 0 40px
 	&__row
 		display: flex
 		justify-content: space-between
