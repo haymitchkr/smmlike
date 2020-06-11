@@ -575,16 +575,12 @@ header
 	&__items
 		display: inline-block
 		width: 100%
-		@media (max-width: 600px)
-			display: block
 	.advantages-item
 		display: flex
 		margin-top: 50px
 		max-width: 550px
 		position: relative
 		float: left
-		@media (max-width: 600px)
-			float: none
 		@media (max-width: 400px)
 			flex-direction: column
 		&__img
@@ -603,6 +599,7 @@ header
 			@media (max-width: 400px)
 				position: relative
 				width: 100%
+				height: auto
 				background-color: transparent
 				box-shadow: none
 				margin-bottom: 20px
@@ -642,8 +639,6 @@ header
 	.advantages-item:nth-child(even)
 		flex-direction: row-reverse
 		float: right
-		@media (max-width: 600px)
-			float: none
 		@media (max-width: 400px)
 			flex-direction: column
 		.advantages-item__content
@@ -707,6 +702,7 @@ header
 		margin-top: 20px
 		@media (max-width: 800px)
 			width: 80%
+			height: auto
 			margin-bottom: 30px
 		@media (max-width: 450px)
 			width: 100%
@@ -1292,6 +1288,8 @@ header
 			flex-direction: column
 			justify-content: space-between
 			height: 100%
+			@media (max-width: 900px)
+				height: auto
 			&__item:last-child
 				@media (max-width: 900px)
 					margin-bottom: 0
