@@ -292,9 +292,6 @@ header {
                 transform: translate(0, -50%); }
       header .header__row .burger::after {
         bottom: 0; }
-      @media (max-width: 550px) {
-        header .header__row .burger span, header .header__row .burger::after, header .header__row .burger::before {
-          background-color: #3a66d7; } }
     header .header__row .burger.active {
       -webkit-transition: -webkit-transform 0.3s ease;
       transition: -webkit-transform 0.3s ease;
